@@ -56,6 +56,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
      * @link http://php.net/manual/en/iterator.rewind.php
      * @return void Any returned value is ignored.
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->current_index = 0;
@@ -66,6 +67,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
      * @link http://php.net/manual/en/iterator.current.php
      * @return mixed Can return any type.
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->collection[$this->current_index];
@@ -76,6 +78,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
      * @link http://php.net/manual/en/iterator.key.php
      * @return mixed scalar on success, or null on failure.
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->current_index;
@@ -86,6 +89,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
      * @link http://php.net/manual/en/iterator.next.php
      * @return null any returned value is ignored.
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         ++$this->current_index;
@@ -100,6 +104,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
      * @return boolean The return value will be casted to boolean and then evaluated.
      * Returns true on success or false on failure.
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return isset($this->collection[$this->current_index]);
@@ -108,6 +113,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
     /**
      * @return integer
      */
+    #[\ReturnTypeWillChange]
     public function count()
     {
         return max($this->total_count, count($this->collection));
@@ -124,6 +130,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
      * <p>
      * The return value will be casted to boolean if non-boolean was returned.
      */
+    #[\ReturnTypeWillChange]
     public function offsetExists($offset)
     {
         $exists = isset($this->collection[$offset]);
@@ -146,6 +153,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
      * </p>
      * @return mixed Can return all value types.
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         $value = isset($this->collection[$offset]) ? $this->collection[$offset] : null;
@@ -171,6 +179,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
      * </p>
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetSet($offset, $value)
     {
         if ($offset === null) {
@@ -188,6 +197,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
      * </p>
      * @return void
      */
+    #[\ReturnTypeWillChange]
     public function offsetUnset($offset)
     {
         unset($this->collection[$offset]);
@@ -196,6 +206,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
     /**
      * @return $this
      */
+    #[\ReturnTypeWillChange]
     private function fetchNext()
     {
         $this->updateOffset()->fetch();
@@ -220,6 +231,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
     /**
      * If after is set, then we increment it, otherwise we increment before
      */
+    #[\ReturnTypeWillChange]
     private function updateOffset()
     {
         if ($this->after()) {
@@ -233,6 +245,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
     /**
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     private function after()
     {
         return $this->params['after'];
@@ -241,6 +254,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
     /**
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     private function before()
     {
         return $this->params['before'];
@@ -249,6 +263,7 @@ class Cursor implements \Iterator, \Countable, \ArrayAccess
     /**
      * @return mixed
      */
+    #[\ReturnTypeWillChange]
     private function limit()
     {
         return $this->params['limit'];

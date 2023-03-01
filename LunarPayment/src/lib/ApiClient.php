@@ -28,7 +28,7 @@ class ApiClient
      */
     private $api_key;
 
-    private $version = '1.0.8';
+    private $version = '2.0.0';
 
 
     /**

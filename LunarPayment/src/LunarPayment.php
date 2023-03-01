@@ -109,6 +109,7 @@ class LunarPayment extends Plugin
 
         $paymentMethodUuid = PluginHelper::PAYMENT_METHOD_UUID;
         $paymentMethodName = PluginHelper::PAYMENT_METHOD_NAME;
+        $paymentMethodDescription = PluginHelper::PAYMENT_METHOD_DESCRIPTION;
 
         $paymentMethodData = [
             'id' => $paymentMethodUuid,
@@ -116,7 +117,7 @@ class LunarPayment extends Plugin
             'pluginId' => $pluginId,
             'afterOrderEnabled' => false, // disable by default after order actions
             'name' => $paymentMethodName,
-            'description' => 'Secure payment with credit card via Lunar'
+            'description' => $paymentMethodDescription,
         ];
 
         /** @var EntityRepository $paymentRepository */
@@ -131,13 +132,13 @@ class LunarPayment extends Plugin
                 'paymentMethodId' => $paymentMethodUuid,
                 'languageId' => $languageEN,
                 'name' => $paymentMethodName,
-                'description' => PluginHelper::PAYMENT_METHOD_DESCRIPTION
+                'description' => $paymentMethodDescription,
             ],
             [
                 'paymentMethodId' => $paymentMethodUuid,
                 'languageId' => $languageDE,
                 'name' => $paymentMethodName,
-                'description' => PluginHelper::PAYMENT_METHOD_DESCRIPTION
+                'description' => $paymentMethodDescription,
             ]
         ], $context);
 

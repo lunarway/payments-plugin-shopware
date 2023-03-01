@@ -49,7 +49,7 @@ class Merchants extends Endpoint
     {
         $url = 'merchants/' . $merchant_id;
 
-        $this->endpoint->client->request('PUT', $url, $args);
+        return $this->endpoint->client->request('PUT', $url, $args);
     }
 
     /**

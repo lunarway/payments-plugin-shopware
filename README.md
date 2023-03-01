@@ -45,6 +45,15 @@ Under the Shopware Lunar payment method config (`/admin#/sw/extension/my-extensi
   * Activate/deactivate the plugin
   * Uninstall the plugin
 
+Under the Shopware Lunar payment method Shop settings (`/admin#/sw/settings/payment/detail/1a9bc76a3c244278a51a2e90c1e6f040`), you can:
+  * Activate/deactivate plugin payment methods
+  * Update frontend payment methods name
+  * Update frontend payment methods description
+  * Update frontend payment methods logo
+  * Update frontend payment methods list order
+  * Allow payment methods to be available when change payment method by customer (not available for the moment in this plugin)
+  * Establish availability rule for payment methods
+
 Under the Shopware Lunar payment method settings (`/admin#/lunar/payment/settings/index`), you can:
   * Activate/deactivate the payment method from plugin
   * Update the payment method name & description in the payment methods settings

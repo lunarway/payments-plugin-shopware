@@ -1,0 +1,13 @@
+{
+    "name": "lunar/plugin-shopware",
+    "description": "Lunar Payment plugin for Shopware",
+    "version": "1.0.0",
+    "type": "shopware-platform-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lunar",
+            "email": "support@lunar.app"
+        }
+    ]
+}
